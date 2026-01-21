@@ -1,48 +1,83 @@
 # 🏢 Conference Room Booking System
 
-The ** Conference Room Booking system ** is build to manage the availability of the shared conference room in the organization, allowing users to book the conference room without any conflicts.
+The Conference Room Booking System is an internal organisational platform designed to manage the booking and use of shared conference rooms. Its primary purpose is to enable employees to view room availability, create and manage bookings, and prevent scheduling conflicts in a simple and reliable manner.
 
-This system is built for organizations that need conference rooms that for meetings, such as offices, co-working environments. Organizations need a structured way to manage shared conference room bookings.
+The system supports multiple user roles, including employees, administrators, reception staff, and facilities managers, each with distinct responsibilities and access levels. Administrative users gain visibility into room usage, conflicts, and reports, while operational roles can manage visitor bookings and room maintenance schedules.
+
+At its current stage, the system is documented through Agile artefacts such as user stories, sprint plans, and execution records. Future iterations will introduce a fully implemented user interface, backend services, APIs, and supporting infrastructure to transform the system from a documentation-driven project into a working application.
 
 ---
 
 ## 📌 Purpose of This Repository
 
-This repository is used for:
-- Practising Git and GitHub fundamentals
-- Creating and reviewing Pull Requests
-- Working with sprint documentation
-- Gradually improving project documentation over time
+The purpose of this repository is to demonstrate professional software development practices focused on documentation, collaboration, and Agile processes rather than full system implementation.
 
-At this stage, the repository focuses on **process and communication**, not full system implementation.
+It serves as a learning and simulation environment where Scrum artefacts such as user stories, sprint plans, daily standups, reviews, and retrospectives are created, reviewed, and maintained using industry-standard tools and workflows. The repository is used to practise Git and GitHub fundamentals, including branching strategies, Pull Requests, issue reporting, and peer reviews.
 
----
+Over time, the repository is intended to evolve from a documentation-focused project into a more technically complete system, with future additions such as API specifications, architecture documentation, and implementation guidelines. This staged approach reflects real-world software development, where strong communication and process foundations are established before full-scale development begins.
 
 ## 🗂 Repository Contents
 
-- `README.md` – Basic project overview
-- `sprint/` – Sprint planning and execution artefacts created during Scrum simulations
-- `.gitignore` – Git ignore rules
-- `LICENSE` – Project license
+This repository is organised to support Agile documentation, collaboration, and sprint execution.
 
----
+- README.md
+Provides a high-level overview of the project, its purpose, system context, onboarding guidance, and contribution workflow.
+
+- sprint/
+Contains all sprint-related artefacts created during Scrum simulations, including:
+
+ * Sprint planning records
+
+ * Daily standups
+
+ * Mid-sprint checkpoints
+
+ * Sprint reviews
+
+ * Sprint retrospectives
+
+ * Sprint summaries
+
+- Process Documentation (Markdown files)
+Includes user stories, epics, prioritisation matrices, definitions of done, and reflection documents that support backlog management and sprint execution.
+
+- .github/
+Contains issue templates and configuration files that guide consistent communication when reporting bugs or proposing improvements.
+
+- .gitignore
+Specifies files and directories that should not be tracked by Git.
+
+- LICENSE
+Defines the licensing terms for the repository.
+
+As the project evolves, additional folders will be introduced for implementation code, API documentation, and technical setup instructions.
 
 ## ⚙️ Installation
 
-This project does not require installation at this stage.
+At this stage, the Conference Room Booking System does not require any software installation or runtime setup.
 
-Future iterations will introduce application code and setup instructions.
+The repository currently focuses on documentation, Agile process simulation, and collaboration workflows, APIs rather than a fully implemented application.
+
+- To get started:
+
+ * Clone the repository:
+
+   * git clone https://github.com/<your-username>/conference-room-booking-system.git
+ 
+
+ * Open the repository in a text editor (such as VS Code) to review the documentation and sprint artefacts.
 
 ---
 
 ## 🚀 Usage
 
-This repository is currently used for:
-1. Reviewing documentation practices
-2. Creating Pull Requests
-3. Collaborating with peers during sprint simulations
+- Reviewing and creating Scrum artefacts such as user stories, sprint plans, daily standups, reviews, and retrospectives
 
----
+- Practising Git and GitHub workflows, including branching, Pull Requests, issue reporting, and peer reviews
+
+- Simulating sprint execution and documenting progress using markdown files
+
+- Collaborating with peers on documentation and process improvements
 
 ## 🤝 Contributing
 
@@ -215,15 +250,19 @@ This repository contains sprint documentation created during Scrum Simulations:
 
 ## Upcoming Documentation (Placeholders)
 
-The following sections will be added as the project evoles
-- API documentations (Swagger/OpenAPI)
-- Architecture Diagrams (Data flow, components)
-- Runtime instructions (Docker)
-- Developer setup and contribution workflows
+- API Documentation — endpoints for CRUD operations, report downloads, authentication
+
+- Architecture Diagrams — system context, components, and data flow
+
+- Developer Setup Guide — instructions for running the system locally or in Docker
+
+- Testing & CI/CD — unit tests, integration tests, automated pipelines
 
 
 ## LICENCE
-This project is licensed under the MIT License.
+This project is licensed under the MIT [LICENSE](LICENSE).
 
 ---
-
+✍️ Author
+Masoka Andile Mohono: masokaandile17@gmail.com
+Created as part of Software Development Trainee Program.
