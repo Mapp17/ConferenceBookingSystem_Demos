@@ -1,16 +1,16 @@
-openapi: 3.0.0
+openapi: 3.0.3
 info:
   title: Conference Room Booking API
   description: API for managing conference rooms, bookings, and availability within an office environment.
   version: 1.0.0
   contact:
     name: Support Team
-    email: support@bitcubetrainee.tech
+    email: support@company.com
 servers:
-  - url: https://staging-api.bitcubetrainee.tech/api
-    description: Staging server for internal testing
-  - url: https://api.bitcubetrainee.tech
-    description: Production server for publishing live
+  - url: https://staging.example.com/api
+    description: Staging server
+  - url: https://api.example.com
+    description: Production server
 components:
   securitySchemes:
     BearerAuth:
@@ -27,14 +27,18 @@ components:
       properties:
         id:
           type: string
+          example: "room-101"
         name:
           type: string
+          example: "Conference Room 101"
         capacity:
           type: integer
+          example: 10
         equipment:
           type: array
           items:
             type: string
+          example: ["Projector", "Whiteboard"]
     Booking:
       type: object
       required:
@@ -46,18 +50,24 @@ components:
       properties:
         id:
           type: string
+          example: "booking-001"
         roomId:
           type: string
+          example: "room-101"
         startTime:
           type: string
           format: date-time
+          example: "2026-01-25T10:00:00Z"
         endTime:
           type: string
           format: date-time
+          example: "2026-01-25T11:00:00Z"
         bookedBy:
           type: string
+          example: "employee123"
         recurring:
           type: boolean
+          example: false
     Error:
       type: object
       required:
@@ -66,8 +76,10 @@ components:
       properties:
         code:
           type: integer
+          example: 400
         message:
           type: string
+          example: "Invalid room ID"
 security:
   - BearerAuth: []
 paths:
@@ -128,6 +140,33 @@ paths:
                 $ref: '#/components/schemas/Room'
         '404':
           description: Room not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      summary: Update room details
+      parameters:
+        - name: roomId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Room'
+      responses:
+        '200':
+          description: Room updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Room'
+        '400':
+          description: Bad request
           content:
             application/json:
               schema:
@@ -206,7 +245,51 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-   
+    put:
+      summary: Update a booking
+      parameters:
+        - name: bookingId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Booking'
+      responses:
+        '200':
+          description: Booking updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+        '400':
+          description: Invalid booking data or conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Cancel a booking
+      parameters:
+        - name: bookingId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Booking cancelled
+        '404':
+          description: Booking not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
   /availability:
     get:
       summary: Check available rooms for a given time slot
