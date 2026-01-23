@@ -5,11 +5,11 @@ info:
   version: 1.0.0
   contact:
     name: Support Team
-    email: support@company.com
+    email: support@trainee.tech
 servers:
-  - url: https://staging.example.com/api
+  - url: https://staging.trainee.tech/api
     description: Staging server
-  - url: https://api.example.com
+  - url: https://api.trainee.tech
     description: Production server
 components:
   securitySchemes:
